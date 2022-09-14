@@ -1,8 +1,10 @@
 # BubbleOCR 2.2
 It allows you to translate any text of an image, specially designed for text bubbles/balloon
 
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/L5BBxiLhlwI/0.jpg)](https://youtu.be/L5BBxiLhlwI)
+
 ## Features
-With this plugin for Gimp, it is possible to perform Optical character recognition (OCR) of images, and their translation(many language), it also allows you to edit all the text in various ways, as well as make corrections using word lists. 
+With this plugin for Gimp, it is possible to perform optical character recognition (OCR) of images, and their translation(many language), it also allows you to edit all the text in various ways, as well as make corrections using word lists. 
 It also offers spell checking through browsers or subtitle programs like Aegisub.
 
 ### Requirements:
@@ -23,11 +25,15 @@ https://github.com/tesseract-ocr/tesseract
 
 
 # Download
-**Plugin-only Version**
+**Plugin-only Version:**
+
+https://github.com/snakeotakon/BubbleOCR/releases
+
 Tesseract needs to be installed separately for it to work.
 Waifu2x and Deep-translator.exe are optional
 
-**Standard Version **
+**Standard Version**
+
 This is the recommended version, so that the program can work normally.
 - Installer (Install.bat)
 - Plugin Export_layers(.py)
@@ -36,12 +42,25 @@ This is the recommended version, so that the program can work normally.
 - Deep-translator.exe
 - Microsoft Visual C++ Redistributable x86 and x64 Visual Studio 2015, 2017, 2019, and 2022
 
+170 MB
+https://drive.google.com/file/d/1QCi7Zrj2oX_2U8HfQFrzSnjq06OlQ534/view?usp=sharing
+
 **Extended Version (+2 engine OCR)**
+
 *Standard version* + 
 - Capture2Text_Cli.exe.- A variant of tesseract, it can give different results than the current version
 - tesseract4Beta.exe.- A variant of tesseract it can give different results than the current version
 - Aegisub-3.0.2-32.exe.- Edit the text as subtitle
 - AviSynth_260.exe.- Only if you use aegisub and want to see the OCR images as video (video.avs)
+
+291 MB
+https://drive.google.com/file/d/19JlRub4PDXdiZZuCDkQwnI7BzSuM_WVO/view?usp=sharing
+
+** Full Version**
+This version includes everything that previous versions have, along with Gimp version 2.10.32. It is recommended for users who do not have Gimp on their computers.
+
+543 MB
+https://drive.google.com/file/d/1dVlqmJnWxREAdTP2zuIlThVJMuRfU_FS/view?usp=sharing
 
 ------------
 
@@ -79,7 +98,7 @@ Start Gimp and there will be a new menu: "LAYER/TOOLS/", and a new file will be 
  - Capture2Text_CLI.- Based on Tesseract, but it can give different results than the original Tesseract.
 
 - **Change Font** (*Plugin_ChangeFont.py*).- Change the font, size, scale and other features.
-Plugin_QuickViewRemoveHoles.py.- It removes (small) holes within a selection just as it does the Quick Mask switch, and this is quite useful for making corrections to selections, for example to split a speech bubble. It is necessary to assign shortcut the letter Q, so that it works with the script Plugin_SelectionToPath_bidirectional.py.
+- **Change to Quick Mask**  (*Plugin_QuickMaskRemoveHoles.py*).- It removes (small) holes within a selection just as it does the Quick Mask switch, and this is quite useful for making corrections to selections, for example to split a speech bubble. It is necessary to assign shortcut the letter Q, so that it works with the plugin  Plugin_SelectionToPath_bidirectional.py.
 
 - **Selection to Path** (*Plugin_SelectionToPath.py*).-  Save the selections as paths. Very useful when working with many images (For "Process All layers/Path" of Plugin_OCRForBalloonsText). 
 
@@ -151,6 +170,10 @@ Detect automatic color globe text, for default is white. useful globe text black
 **Reduce Filter border in pixels:**
 Reduce Edge irregularities, useful to make the selection smoother, or to eliminate small selections. Test with values of 1-20.
 
+##Config_BubbleOCR.ini
+
+Here you can configure the different options of the plugin, but mainly establish where the programs that are needed are located.
+
 Using with many images
 ----------------------------------------------------------------
 Import all the images of the project up to a maximum of 250 .
@@ -163,15 +186,19 @@ Once you have the selected areas (multiple speech bubbles), this can be saved wi
 
 #### Tip
 It is recommended to hide all other images/layers so Gimp doesn't slow down. The best way to hide layers in the current level is by pressing Shift plus the left mouse button.
+
 ![](https://farm8.staticflickr.com/7725/17244826968_8e6fd5208b_o.gif)
+
 http://ahmed.amayem.com/gimp-hide-all-layers-show-all-layers/
 
 
 
 #### Exporting many images (Groups)
+
 To export many grouped images, this other plugin is necessary
 
 ##### File - Export layers... (plugin)
+
 ![](https://khalim19.github.io/gimp-plugin-export-layers/images/screenshot_dialog_basic_usage.png)
 
 https://github.com/khalim19/gimp-plugin-export-layers/releases
@@ -180,7 +207,8 @@ https://khalim19.github.io/gimp-plugin-export-layers/sections/Installation.html
 
 
 
-# Tutorials
+# Usage
+
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/ovtaJguCYV8/0.jpg)](https://youtu.be/ovtaJguCYV8)
 
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/sASVPqiOojo/0.jpg)](https://youtu.be/https://youtu.be/sASVPqiOojo)
@@ -196,25 +224,32 @@ https://khalim19.github.io/gimp-plugin-export-layers/sections/Installation.html
 
 OCR Optical character recognition or optical character reader 
 Tesseract: use 4.0 alpha, is legacy tessdata 3.0 (languages)
+
 https://sourceforge.net/projects/capture2text/files/Dictionaries/
 
 Tesseract LSTM (5.0):  training Neural net based, is compatible NEW Tessdata 
+
 https://tesseract-ocr.github.io/tessdoc/Home.html
 
 OCR Tesseract Version 5.0 
+
 https://github.com/UB-Mannheim/tesseract/wiki
 https://tesseract-ocr.github.io/tessdoc/Home.html
 
 OCR Tesseract Version 4.0
+
 https://tesseract-ocr.github.io/tessdoc/4.0-with-LSTM.html# 400-alpha-for-windows
 
 Information Tessdata (data languages Training)
+
 https://tesseract-ocr.github.io/tessdoc/Training-Tesseract.html
 
 Capture2TEXT: variant Tesseract 4.0 compatible legacy tessdata 
+
 http://capture2text.sourceforge.net
 
 Waifu2X (scale):improves word recognition in small images
+
 http://waifu2x.udp.jp/index.es.html
 https://github.com/DeadSix27/waifu2x-converter-cpp
 https://github.com/nihui/waifu2x-ncnn-vulkan
@@ -222,11 +257,13 @@ https://github.com/nihui/waifu2x-ncnn-vulkan
 
 
 Subtitle:
+
 http://www.aegisub.org/		(compatible Avisynth)
 https://www.nikse.dk/subtitleedit/ 		(List words, spell check, translator)
 
 
 Microsoft Visual C++ Redistributable latest Visual Studio 2015, 2017, 2019, and 2022
+
 https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170
 
 
