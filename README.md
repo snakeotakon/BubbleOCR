@@ -1,7 +1,7 @@
 # BubbleOCR 2.2
 It allows you to translate any text of an image, specially designed for text bubbles/balloon
 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/L5BBxiLhlwI/0.jpg)](https://youtu.be/L5BBxiLhlwI)
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/UAO7KL0itEY/0.jpg)](https://youtu.be/UAO7KL0itEY)
 
 ## Features
 With this plugin for Gimp, it is possible to perform optical character recognition (OCR) of images, and their translation(many language), it also allows you to edit all the text in various ways, as well as make corrections using word lists. 
