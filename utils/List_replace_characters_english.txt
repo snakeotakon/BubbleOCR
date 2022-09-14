@@ -1,0 +1,8 @@
+Replacement list, you can put any characters or words, separated by tab.
+Useful for correcting errors generated in character recognition (OCR).
+
+
+
+|	I
+6ot	got
+$o	so

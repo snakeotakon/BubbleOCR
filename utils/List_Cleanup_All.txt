@@ -1,0 +1,9 @@
+Replace list with regular expressions, use tab as separator... 
+Examples:https://en.wikipedia.org/wiki/Regular_expression
+Only lines with a tab are processed
+
+
+-[\r\n]		#Join line break separated with(-)
+[\r\n]	 	#Join all lines break
+([\r\n])+	$1 	#Remove return duplicates
+[ ]+	 	#Remove space duplicates
