@@ -82,7 +82,7 @@ def waifu2x(image, drawable,indexW,scale,noise,blayers,bNewLayer,sufix):
         layer = pdb.gimp_image_get_layer_by_name(image,name)
         # pdb.file_png_save_defaults(image, layer, filename, filename)
         pdb.file_png_save(image, layer, filename,filename, 0,0, 0, 0, 0, 0, 0)
-        sCommand=r'{} -i "{}" -o "{}" {}'\
+        sCommand=r'"{}" -i "{}" -o "{}" {}'\
         .format(g_pWaifu2X[indexW][1],filename,filename,  g_pWaifu2X[indexW][2].format(noise,scale)  )
         
         if os.path.exists(g_pWaifu2X[indexW][3]):
