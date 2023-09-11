@@ -35,7 +35,8 @@ if os.path.exists(g_pathFileINI):
         configINI.readfp(f)
     loadFileINI()
     
-def waifu2x(image, drawable,indexW,scale,noise,blayers,bNewLayer,sufix):
+def waifu2x(image, drawable,indexW,scale,noise,blayers,bNewLayer,scaleQ,sufix):
+    old_width, old_height = pdb.gimp_image_width(image), pdb.gimp_image_height(image)
     def listGuiRun():
         def fillList(L,ls):
             for Layer in L.layers:
@@ -118,10 +119,16 @@ def waifu2x(image, drawable,indexW,scale,noise,blayers,bNewLayer,sufix):
         x,y = layer.offsets
         pdb.gimp_layer_set_offsets(layerNew, x, y)
         pdb.gimp_image_insert_layer(image, layerNew, parent, position)
+        new_width = int(layer.width * scale)
+        new_height = int(layer.height * scale)
+        x_offset = (layer.width - old_width) // 2
+        y_offset = (layer.height - old_height) // 2
         if not bNewLayer:
             nameB = layer.name
             pdb.gimp_image_remove_layer(image, layer)
             layerNew.name = nameB
+        if scaleQ:
+            pdb.gimp_image_resize(image, new_width, new_height, x_offset, y_offset)
     pdb.gimp_progress_end()
     pdb.gimp_image_undo_group_end(image)
 register(
@@ -141,6 +148,7 @@ register(
     (PF_OPTION, "noise", "Reduction Noise", 3,("0", "1", "2", "3")),
     (PF_BOOL,   "blayers", "Select multiple layers?", False),
     (PF_BOOL,   "bNewLayer", "Add as New Layer", True),
+    (PF_BOOL,   "scaleQ", "Scale Layer to Output" , False),
     (PF_STRING, "sufix", "Sufix for New Layer", "_Waifu2x"),
   ],
   [],
